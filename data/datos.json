@@ -24,5 +24,23 @@
       "punto_de_interes": true,
       "conexiones": ["Nodo 1", "Nodo 2"]
     }
+  ],
+  "taxis": [
+    {
+      "placa": "abc123",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc123",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc123",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc123",
+      "capacidad_tanque": 20
+    }
   ]
 }
