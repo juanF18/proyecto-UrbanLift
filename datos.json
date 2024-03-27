@@ -1,0 +1,28 @@
+{
+  "nodos": [
+    {
+      "nombre": "Nodo 1",
+      "carrera": "Ingeniería",
+      "calle": "Calle 1",
+      "semaforo": true,
+      "punto_de_interes": true,
+      "conexiones": ["Nodo 2", "Nodo 3"]
+    },
+    {
+      "nombre": "Nodo 2",
+      "carrera": "Medicina",
+      "calle": "Calle 2",
+      "semaforo": true,
+      "punto_de_interes": false,
+      "conexiones": ["Nodo 1", "Nodo 3"]
+    },
+    {
+      "nombre": "Nodo 3",
+      "carrera": "Arquitectura",
+      "calle": "Calle 3",
+      "semaforo": false,
+      "punto_de_interes": true,
+      "conexiones": ["Nodo 1", "Nodo 2"]
+    }
+  ]
+}
