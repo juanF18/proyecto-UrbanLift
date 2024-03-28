@@ -49,5 +49,5 @@ class Nodes:
 
     # Method to set new state of punto interes attribute
     def setPuntoInteres(self, nuevoEstado: bool):
-        if nuevoEstado != None:
+        if nuevoEstado is not None:
             self.puntoInteres = nuevoEstado
