@@ -1,4 +1,4 @@
-class Nodes:
+class Node:
     def __init__(
         self,
         nombre: str,
@@ -14,6 +14,31 @@ class Nodes:
         self.semaforo = semaforo
         self.puntoInteres = puntoInteres
         self.conexiones = conexiones
+
+    def load_nodes(data: dict):
+        """
+        Loads nodes from a data dictionary and returns
+        a list of Node object.
+
+        Args:
+            data(dict): a dictionary containing the
+            information of the nodes
+        Returns:
+            list: A list of Node objects created
+            from the data provided.
+        """
+        nodes = []
+        for nodo_data in data["nodes"]:
+            nodo = Node(
+                nodo_data["nombre"],
+                nodo_data["carrera"],
+                nodo_data["calle"],
+                nodo_data["semaforo"],
+                nodo_data["punto_de_interes"],
+                nodo_data["conexiones"],
+            )
+            nodes.append(nodo)
+        return nodes
 
     # Method to set new value to node name
     def setNombre(self, nuevoNombre: str):
