@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "nombre": "Nodo 1",
+      "carrera": "Ingeniería",
+      "calle": "Calle 1",
+      "semaforo": true,
+      "punto_de_interes": true,
+      "conexiones": ["Nodo 2", "Nodo 4"]
+    },
+    {
+      "nombre": "Nodo 2",
+      "carrera": "Medicina",
+      "calle": "Calle 2",
+      "semaforo": true,
+      "punto_de_interes": false,
+      "conexiones": ["Nodo 1", "Nodo 3", "Nodo 5"]
+    },
+    {
+      "nombre": "Nodo 3",
+      "carrera": "Arquitectura",
+      "calle": "Calle 3",
+      "semaforo": false,
+      "punto_de_interes": true,
+      "conexiones": ["Nodo 2", "Nodo 6"]
+    },
+    {
+      "nombre": "Nodo 4",
+      "carrera": "Biología",
+      "calle": "Calle 4",
+      "semaforo": true,
+      "punto_de_interes": false,
+      "conexiones": ["Nodo 1", "Nodo 5", "Nodo 7"]
+    },
+    {
+      "nombre": "Nodo 5",
+      "carrera": "Economía",
+      "calle": "Calle 5",
+      "semaforo": false,
+      "punto_de_interes": true,
+      "conexiones": ["Nodo 2", "Nodo 4", "Nodo 8"]
+    },
+    {
+      "nombre": "Nodo 6",
+      "carrera": "Psicología",
+      "calle": "Calle 6",
+      "semaforo": true,
+      "punto_de_interes": false,
+      "conexiones": ["Nodo 3", "Nodo 7", "Nodo 9"]
+    },
+    {
+      "nombre": "Nodo 7",
+      "carrera": "Historia",
+      "calle": "Calle 7",
+      "semaforo": false,
+      "punto_de_interes": true,
+      "conexiones": ["Nodo 4", "Nodo 6", "Nodo 8"]
+    },
+    {
+      "nombre": "Nodo 8",
+      "carrera": "Física",
+      "calle": "Calle 8",
+      "semaforo": true,
+      "punto_de_interes": false,
+      "conexiones": ["Nodo 5", "Nodo 7", "Nodo 9"]
+    },
+    {
+      "nombre": "Nodo 9",
+      "carrera": "Química",
+      "calle": "Calle 9",
+      "semaforo": true,
+      "punto_de_interes": true,
+      "conexiones": ["Nodo 6", "Nodo 8"]
+    }
+  ]
+}
