@@ -31,15 +31,15 @@
       "capacidad_tanque": 20
     },
     {
-      "placa": "abc123",
+      "placa": "abc456",
       "capacidad_tanque": 20
     },
     {
-      "placa": "abc123",
+      "placa": "abc789",
       "capacidad_tanque": 20
     },
     {
-      "placa": "abc123",
+      "placa": "abc012",
       "capacidad_tanque": 20
     }
   ]
