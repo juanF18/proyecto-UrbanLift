@@ -13,16 +13,16 @@ class Cab:
             cabs.append(cab)
         return cabs
 
-    def obtenerPlaca(self):
+    def get_plate(self):
         return self.placa
 
-    def asignarPlaca(self, unaPlaca: str):
+    def set_plate(self, unaPlaca: str):
         if unaPlaca is not None:
             self.placa = unaPlaca
 
-    def obtenerCapacidad(self):
+    def get_capacity(self):
         return self.capacidadTanque
 
-    def asignarCapacidad(self, unaCapacidad: int):
+    def set_capacity(self, unaCapacidad: int):
         if unaCapacidad is not None:
             self.capacidadTanque = unaCapacidad
