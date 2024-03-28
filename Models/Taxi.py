@@ -15,14 +15,4 @@ class Taxi:
     
     def asignarCapacidad(self, unaCapacidad: int):
         if unaCapacidad !=None:
-            self.capacidadTanque=unaCapacidad           
-            
-
-    
-        
-    
-        
-    
-        
-
-    
+            self.capacidadTanque=unaCapacidad
