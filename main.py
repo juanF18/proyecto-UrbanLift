@@ -1,5 +1,5 @@
 from Models.Node import Node
-from Models.Taxi import Cab
+from Models.Cab import Cab
 from func.data_loading import extract_data
 
 
