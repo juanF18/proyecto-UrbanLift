@@ -2,5 +2,5 @@ class Routes:
     __TCONSEMAFORO = 12
     __TSINSEMAFORO = 10
     __DISTANCE = 2
-    FUELCONSUPTION = 1
-    COSTNODE = 3000
+    __FUELCONSUPTION = 1
+    __COSTNODE = 3000
