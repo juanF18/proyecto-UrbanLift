@@ -25,6 +25,7 @@ class Node:
             information of the nodes
         Returns:
             list: A list of Node objects created
+        a list of Node object.JFC-4
             from the data provided
             .
         """
@@ -52,31 +53,31 @@ class Node:
         return nodes
 
     # Method to set new value to node name
-    def setNombre(self, nuevoNombre: str):
+    def set_nombre(self, nuevoNombre: str):
         self.nombre = nuevoNombre
 
     # Method to get attribute name of node
-    def getNombre(self) -> str:
+    def get_nombre(self) -> str:
         return self.nombre
 
     # Method to set attribute carrera of node
-    def setCarrera(self, nuevaCarrera: str):
+    def set_carrera(self, nuevaCarrera: str):
         self.carrera = nuevaCarrera
 
     # Method to get attribute carrera of node
-    def getCarrera(self):
+    def get_carrera(self):
         return self.carrera
 
     # Method to set attribute calle of node
-    def setCalle(self, nuevaCalle: str):
+    def set_calle(self, nuevaCalle: str):
         self.calle = nuevaCalle
 
     # Method to get attribute calle of node
-    def getCalle(self):
+    def get_calle(self):
         return self.calle
 
     # Method to set attribute semaforo of node
-    def setSemaforo(self, nuevoEstado: bool):
+    def set_semaforo(self, nuevoEstado: bool):
         self.semaforo = nuevoEstado
 
     # Method to get of attribute semaforo
@@ -84,6 +85,6 @@ class Node:
         return self.semaforo
 
     # Method to set new state of punto interes attribute
-    def setPuntoInteres(self, nuevoEstado: bool):
+    def set_punto_interes(self, nuevoEstado: bool):
         if nuevoEstado is not None:
             self.puntoInteres = nuevoEstado
