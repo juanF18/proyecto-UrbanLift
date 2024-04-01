@@ -17,17 +17,21 @@ class Node:
 
     def load_nodes(data: dict):
         """
-        Loads nodes from a data dictionary and returns
-        a list of Node object.
+        Loads nodes from a data dictionary and returns a list of Node
+        objects and loads the nodes associated with it into connections
 
         Args:
             data(dict): a dictionary containing the
             information of the nodes
         Returns:
             list: A list of Node objects created
-            from the data provided.
+        a list of Node object.JFC-4
+            from the data provided
+            .
         """
         nodes = []
+        # Diccionario para mapear los nombres de nodos a objetos Nodo
+        node_map = {}
         for nodo_data in data["nodes"]:
             nodo = Node(
                 nodo_data["nombre"],
@@ -35,9 +39,17 @@ class Node:
                 nodo_data["calle"],
                 nodo_data["semaforo"],
                 nodo_data["punto_de_interes"],
-                nodo_data["conexiones"],
+                [],
             )
             nodes.append(nodo)
+            # Agregamos el nodo al mapeo
+            node_map[nodo.nombre] = nodo
+        # Se agregan las conexiones reales
+        for nodo_conexiones in nodes:
+            conexiones_nombre = nodo_data["conexiones"]
+            nodo_conexiones.conexiones = [
+                node_map[nombre] for nombre in conexiones_nombre
+            ]
         return nodes
 
     # Method to set new value to node name
