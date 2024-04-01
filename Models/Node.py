@@ -46,9 +46,14 @@ class Node:
             node_map[nodo.nombre] = nodo
         # Se agregan las conexiones reales
         for nodo_conexiones in nodes:
-            conexiones_nombre = nodo_data["conexiones"]
+            conexiones_nombre = [
+                n_conexiones["conexiones"]
+                for n_conexiones in data["nodes"]
+                if n_conexiones["nombre"] == nodo_conexiones.nombre
+            ]
             nodo_conexiones.conexiones = [
-                node_map[nombre] for nombre in conexiones_nombre
+                node_map[nombre]
+                for nombre in (conexiones_nombre[0] if conexiones_nombre else [])
             ]
         return nodes
 
