@@ -1,76 +1,94 @@
 {
   "nodes": [
     {
-      "nombre": "Nodo 1",
+      "nombre": "Nodo1",
       "carrera": "Ingeniería",
       "calle": "Calle 1",
       "semaforo": true,
       "punto_de_interes": true,
-      "conexiones": ["Nodo 2", "Nodo 4"]
+      "conexiones": ["Nodo2", "Nodo4"]
     },
     {
-      "nombre": "Nodo 2",
+      "nombre": "Nodo2",
       "carrera": "Medicina",
       "calle": "Calle 2",
       "semaforo": true,
       "punto_de_interes": false,
-      "conexiones": ["Nodo 1", "Nodo 3", "Nodo 5"]
+      "conexiones": ["Nodo1", "Nodo3", "Nodo5"]
     },
     {
-      "nombre": "Nodo 3",
+      "nombre": "Nodo3",
       "carrera": "Arquitectura",
       "calle": "Calle 3",
       "semaforo": false,
       "punto_de_interes": true,
-      "conexiones": ["Nodo 2", "Nodo 6"]
+      "conexiones": ["Nodo2", "Nodo6"]
     },
     {
-      "nombre": "Nodo 4",
+      "nombre": "Nodo4",
       "carrera": "Biología",
       "calle": "Calle 4",
       "semaforo": true,
       "punto_de_interes": false,
-      "conexiones": ["Nodo 1", "Nodo 5", "Nodo 7"]
+      "conexiones": ["Nodo1", "Nodo5", "Nodo7"]
     },
     {
-      "nombre": "Nodo 5",
+      "nombre": "Nodo5",
       "carrera": "Economía",
       "calle": "Calle 5",
       "semaforo": false,
       "punto_de_interes": true,
-      "conexiones": ["Nodo 2", "Nodo 4", "Nodo 8"]
+      "conexiones": ["Nodo2", "Nodo4", "Nodo8"]
     },
     {
-      "nombre": "Nodo 6",
+      "nombre": "Nodo6",
       "carrera": "Psicología",
       "calle": "Calle 6",
       "semaforo": true,
       "punto_de_interes": false,
-      "conexiones": ["Nodo 3", "Nodo 7", "Nodo 9"]
+      "conexiones": ["Nodo3", "Nodo7", "Nodo9"]
     },
     {
-      "nombre": "Nodo 7",
+      "nombre": "Nodo7",
       "carrera": "Historia",
       "calle": "Calle 7",
       "semaforo": false,
       "punto_de_interes": true,
-      "conexiones": ["Nodo 4", "Nodo 6", "Nodo 8"]
+      "conexiones": ["Nodo4", "Nodo6", "Nodo8"]
     },
     {
-      "nombre": "Nodo 8",
+      "nombre": "Nodo8",
       "carrera": "Física",
       "calle": "Calle 8",
       "semaforo": true,
       "punto_de_interes": false,
-      "conexiones": ["Nodo 5", "Nodo 7", "Nodo 9"]
+      "conexiones": ["Nodo5", "Nodo7", "Nodo9"]
     },
     {
-      "nombre": "Nodo 9",
+      "nombre": "Nodo9",
       "carrera": "Química",
       "calle": "Calle 9",
       "semaforo": true,
       "punto_de_interes": true,
-      "conexiones": ["Nodo 6", "Nodo 8"]
+      "conexiones": ["Nodo6", "Nodo8"]
+    }
+  ],
+  "taxis": [
+    {
+      "placa": "abc123",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc456",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc789",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc012",
+      "capacidad_tanque": 20
     }
   ]
 }
