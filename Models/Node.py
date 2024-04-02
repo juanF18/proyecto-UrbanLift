@@ -14,6 +14,31 @@ class Node:
         self.semaforo = semaforo
         self.puntoInteres = puntoInteres
         self.conexiones = conexiones
+        self.g = 0
+        self.h = 0
+        self.f = 0
+        self.parent = None
+
+    def __eq__(self, other):
+        """
+        Used when a compared == is called to compare 2 objects.
+        """
+        return self.nombre == other.nombre
+
+    def __lt__(self, other):
+        """
+        compares the values of the total cost function f of two
+        nodes and returns True if the value of f of the current
+        node is less than the value of f of the other node, and False otherwise.
+        """
+        return self.f < other.f
+
+    def __hash__(self):
+        """
+        Is used to obtain the hash of an object of the Node class.
+        In this case, it uses the node's name attribute
+        """
+        return hash(self.nombre)
 
     def load_nodes(data: dict):
         """
