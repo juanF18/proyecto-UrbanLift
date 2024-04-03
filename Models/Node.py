@@ -24,13 +24,14 @@ class Node:
             data(dict): a dictionary containing the
             information of the nodes
         Returns:
-            list: A list of Node objects created
+            dict: A dict of Nodes objects created
         a list of Node object.JFC-4
             from the data provided
             .
         """
-        nodes = []
-        # Diccionario para mapear los nombres de nodos a objetos Nodo
+        # diccionario de nodos
+        nodes = {}
+        # Diccionario para mapear los nombres de la conexiones de los nodos
         node_map = {}
         for nodo_data in data["nodes"]:
             nodo = Node(
@@ -41,20 +42,13 @@ class Node:
                 nodo_data["punto_de_interes"],
                 [],
             )
-            nodes.append(nodo)
-            # Agregamos el nodo al mapeo
-            node_map[nodo.nombre] = nodo
-        # Se agregan las conexiones reales
-        for nodo_conexiones in nodes:
-            conexiones_nombre = [
-                n_conexiones["conexiones"]
-                for n_conexiones in data["nodes"]
-                if n_conexiones["nombre"] == nodo_conexiones.nombre
-            ]
-            nodo_conexiones.conexiones = [
-                node_map[nombre]
-                for nombre in (conexiones_nombre[0] if conexiones_nombre else [])
-            ]
+            nodes[nodo.nombre] = nodo
+            # Agregamos el nombre del nodo al mapeo
+            node_map[nodo.nombre] = nodo_data["conexiones"]
+        # Se agregan las conexiones conexiones como objeto nodos
+        for k, v in nodes.items():
+            v.conexiones = [nodes[conexion] for conexion in node_map[k]]
+
         return nodes
 
     # Method to set new value to node name
