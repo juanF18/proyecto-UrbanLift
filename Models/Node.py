@@ -40,6 +40,13 @@ class Node:
         """
         return hash(self.nombre)
 
+    def resetting_euristics_values(nodes_dict: dict):
+        for k, v in nodes_dict.items():
+            v.f = 0
+            v.g = 0
+            v.h = 0
+        return True
+
     def load_nodes(data: dict):
         """
         Loads nodes from a data dictionary and returns a list of Node
