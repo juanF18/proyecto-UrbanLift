@@ -1,11 +1,8 @@
 from Models.Node import Node
 from Models.Cab import Cab
 from func.data_loading import extract_data
-<<<<<<< HEAD
 from Models.Routes import Routes
-=======
 from func.node_paths import Node_paths
->>>>>>> e7d37d4edb3173a84126b47faf3bf296d158a600
 
 
 def main():
@@ -19,10 +16,8 @@ def main():
     # Array of all cabs
     cabs = Cab.load_cabs(data)
 
-<<<<<<< HEAD
     routes = Routes()
     routes.bestFirstSearch(nodes, "Nodo1", "Nodo8")
-=======
     # functions of node routes
     routes = Node_paths()
 
@@ -33,7 +28,6 @@ def main():
     print("Cabs data")
     for cab in cabs:
         print(cab.placa)
->>>>>>> e7d37d4edb3173a84126b47faf3bf296d158a600
 
     start = "Nodo1"
     end = "Nodo5"
