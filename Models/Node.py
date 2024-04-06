@@ -4,7 +4,7 @@ class Node:
         nombre: str,
         carrera: str,
         calle: str,
-        semaforo: bool,
+        semaforo: dict,
         puntoInteres: bool,
         conexiones: list,
     ):
