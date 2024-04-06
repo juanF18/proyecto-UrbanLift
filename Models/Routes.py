@@ -13,37 +13,41 @@ class Routes:
         method to browse on node list and get back route from origin
         to destination
         Args:
-            nodeList: list
-            start:touple
-            finish:touple
+            nodeList: dict
+            start:str
+            finish:str
     """
 
     def bestFirstSearch(self, nodeL, start, finish):
         queue = PriorityQueue()
-        queue.put((0, start))
+        nodeStart = nodeL[start]
+        nodeFinish = nodeL[finish]
+        queue.put((0, nodeStart))
         predecessors = {}
-        predecessors[start] = None
+        predecessors[nodeStart.get_nombre()] = None
         while queue:
             _, node = queue.get()
-            if node == finish:
+            if str.upper(node.get_nombre()) == str.upper(nodeFinish.get_nombre()):
                 break
-            for m in self.__MOVEMENTS:
-                f = node[0] + m[0]
-                c = node[1] + m[1]
-                if 0 <= f < len(nodeL) and 0 <= c < len(nodeL[0]) and nodeL[f][c] == 0:
-                    newNode = (f, c)
-                    if newNode not in predecessors:
-                        prioridad = self.heuristicBFS(newNode, finish)
-                        queue.put((prioridad, newNode))
-                        predecessors[newNode] = node
+            for conectNode in node.conexiones:
+                if conectNode.get_nombre() not in predecessors:
+                    prioridad = self.heuristicBFS(conectNode, nodeFinish)
+                    queue.put((prioridad, conectNode))
+                    predecessors[conectNode.get_nombre()] = node.get_nombre()
         return predecessors
 
     """ 
         method to calculate a heuristic for two nodes for BFS algorithm
         args:
-            nodeA:touple
-            nodeB:touple
+            newNode:node object
+            finishNode:node object
     """
 
-    def heuristicBFS(nodeA, nodeB):
-        return abs(nodeA[0] - nodeB[0]) + abs(nodeA[1] - nodeB[1])
+    def heuristicBFS(self, newNode, finishNode):
+        manhattan = abs(newNode.calle - finishNode.calle) + abs(
+            newNode.carrera - finishNode.carrera
+        )
+        if newNode.get_semaforo()["have"] == True:
+            manhattan += newNode.get_semaforo()["duration"]
+
+        return manhattan
