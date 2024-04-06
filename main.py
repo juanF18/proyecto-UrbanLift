@@ -16,8 +16,21 @@ def main():
     # Array of all cabs
     cabs = Cab.load_cabs(data)
 
+    # call bfs
     routes = Routes()
-    routes.bestFirstSearch(nodes, "Nodo1", "Nodo8")
+    inicio = "Nodo7"
+    fin = "Nodo9"
+    path = routes.bestFirstSearch(nodes, inicio, fin)
+
+    nodo = fin
+    camino = [nodo]
+    while nodo != (inicio):
+        nodo = path[nodo]
+        camino.append(nodo)
+
+    camino.reverse()
+    print(camino)
+
     # functions of node routes
     routes = Node_paths()
 
