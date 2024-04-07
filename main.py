@@ -41,8 +41,8 @@ def main():
     print("-" * 50)
 
     print("Best firs search")
-    inicio = "Nodo7"
-    fin = "Nodo9"
+    inicio = "Nodo1"
+    fin = "Nodo6"
     path = routes_bfs.bestFirstSearch(nodes, inicio, fin)
     nodo = fin
     camino = [nodo]
@@ -61,13 +61,9 @@ def main():
 
     # Route hill climbing
 
-    iteraciones_max = 100000
-    print("Laberinto inicial:")
-    # imprimir_laberinto(L)
-
-    print("\nLaberinto después de Hill Climbing:")
-    pathHill = routes_bfs.hillClimbing(nodes, (0, 0), (3, 4), iteraciones_max)
-    # imprimir_laberinto(L_final)
+    iteraciones_max = 50
+    pathHill = routes_bfs.hillClimbing(nodes, inicio, fin, iteraciones_max)
+    print(pathHill)
 
 
 if __name__ == "__main__":
