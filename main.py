@@ -39,6 +39,7 @@ def main():
     path = routes.astar_shortest_route(nodes, "Nodo1", "Nodo5")
     print("Path: ", path)
     print("-" * 50)
+
     print("Best firs search")
     inicio = "Nodo7"
     fin = "Nodo9"
@@ -57,6 +58,16 @@ def main():
     path, total_fuel = routes.astar_with_gas(nodes, "Nodo1", "Nodo5", 15)
     print("Path: ", path)
     print("Total fuel expense was: ", total_fuel)
+
+    # Route hill climbing
+
+    iteraciones_max = 100000
+    print("Laberinto inicial:")
+    # imprimir_laberinto(L)
+
+    print("\nLaberinto después de Hill Climbing:")
+    pathHill = routes_bfs.hillClimbing(nodes, (0, 0), (3, 4), iteraciones_max)
+    # imprimir_laberinto(L_final)
 
 
 if __name__ == "__main__":
