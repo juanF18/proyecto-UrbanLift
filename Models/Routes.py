@@ -60,39 +60,39 @@ class Routes:
             finish: str
     """
 
-    def hillClimbing(self, L, inicio, final, iteraciones_max=100):
-        pos_actual = inicio
-        valor_actual = self.heuristicHill(L, pos_actual, final)
-
+    def hillClimbing(self, nodeList, start: str, finish: str, iteraciones_max=100):
+        startNode = nodeList[start]
+        finishNode = nodeList[finish]
+        posActual = startNode
+        valorActual = self.heuristicHill(posActual, finishNode)
+        path = [posActual.get_nombre()]
         for _ in range(iteraciones_max):
-            candidatos = [
-                (pos_actual[0] + 1, pos_actual[1]),
-                (pos_actual[0] - 1, pos_actual[1]),
-                (pos_actual[0], pos_actual[1] + 1),
-                (pos_actual[0], pos_actual[1] - 1),
-            ]
-
-            candidatos = []
+            candidatos = [node for node in posActual.conexiones]
 
             if not candidatos:
                 break
 
-            candidato = max(candidatos, key=lambda n: self.heuristicHill(L, n, final))
-            valor_candidato = self.heuristicHill(L, candidato, final)
+            candidato = min(
+                candidatos, key=lambda node: self.heuristicHill(node, finishNode)
+            )
+            valor_candidato = self.heuristicHill(candidato, finishNode)
 
-            if valor_candidato > valor_actual:
-                L[pos_actual[0]][pos_actual[1]] = 2
-                pos_actual = candidato
-                valor_actual = valor_candidato
+            if valor_candidato < valorActual:
+                posActual = candidato
+                valorActual = valor_candidato
+                path.append(posActual.get_nombre())
 
-            if pos_actual == final:
-                L[pos_actual[0]][pos_actual[1]] = 2
+            if posActual.get_nombre() == finishNode.get_nombre():
                 print("¡Objetivo alcanzado!")
                 break
 
-        return L
+        return path
 
-    def heuristicHill(self, L, pos_actual, final):
-        return -(
-            ((pos_actual[0] - final[0]) ** 2 + (pos_actual[1] - final[1]) ** 2) ** 0.5
+    def heuristicHill(self, actualNode, finishNode):
+        manhattan = abs(actualNode.calle - finishNode.calle) + abs(
+            actualNode.carrera - finishNode.carrera
         )
+        if actualNode.get_semaforo()["have"] == True:
+            manhattan += actualNode.get_semaforo()["duration"]
+
+        return manhattan
