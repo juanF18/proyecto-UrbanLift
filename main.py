@@ -3,6 +3,8 @@ from Models.Cab import Cab
 from func.data_loading import extract_data
 from Models.Routes import Routes
 from func.node_paths import Node_paths
+from copy import deepcopy
+import random
 
 
 def main():
@@ -22,6 +24,12 @@ def main():
     # functions of node routes
     routes = Node_paths()
 
+    # Assign random cabs into nodes
+    newCabs = deepcopy(cabs)
+    nodeKeys = list(nodes.keys())
+    assignCabs(newCabs, nodeKeys, nodes)
+
+    # print nodes and cabs data
     print("Nodes data")
     for k, v in nodes.items():
         print(v.nombre)
@@ -64,6 +72,31 @@ def main():
     iteraciones_max = 50
     pathHill = routes_bfs.hillClimbing(nodes, inicio, fin, iteraciones_max)
     print(pathHill)
+
+
+""" 
+    Method to asign random cabs into nodes
+    Args:
+        cabList:list
+        nodeKeys:list
+        nodeList:dict
+"""
+
+
+def assignCabs(cabList: list, nodeKeys: list, nodeList: dict):
+    numberCabs = len(cabList) - 1
+    numberNodes = len(nodeKeys) - 1
+    indexCab = -50
+    indexNode = -50
+    while cabList:
+        indexCab = random.randint(0, numberCabs)
+        indexNode = random.randint(0, numberNodes)
+        nodeKey = nodeKeys.pop(indexNode)
+        cab = cabList.pop(indexCab)
+        node = nodeList[nodeKey]
+        node.setCab(cab)
+        numberCabs -= 1
+        numberNodes -= 1
 
 
 if __name__ == "__main__":
