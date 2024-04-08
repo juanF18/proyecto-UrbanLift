@@ -98,48 +98,78 @@ class Routes:
 
         return manhattan
 
-    def astarShortestRoute(self, nodes_dict, start_name, end_name):
+    """ 
+        Method to get shortest route from user to a cab
+        args:
+            nodesDict: dict
+            startName: str
+            endName: str
+    """
+
+    def astarShortestRoute(self, nodesDict: dict, startName: str):
         open_list = []
         closed_list = set()
+        start_node = nodesDict[startName]
+        nodesWithCab = self.searchCabs(nodesDict)
+        routesFound = []
+        for endNode in nodesWithCab:
+            heapq.heappush(open_list, (start_node.nombre, start_node))
+            while open_list:
+                _, current_node = heapq.heappop(open_list)
+                closed_list.add(current_node.nombre)
 
-        start_node = nodes_dict[start_name]
-        end_node = nodes_dict[end_name]
+                if current_node == endNode:
+                    path = []
+                    while current_node:
+                        path.append(current_node.nombre)
+                        current_node = current_node.parent
+                    routesFound.append(path[::-1])
+                    open_list = []
+                    closed_list = set()
+                    break
 
-        heapq.heappush(open_list, (start_node.nombre, start_node))
+                for neighbor in current_node.conexiones:
+                    if neighbor.nombre in closed_list:
+                        continue
 
-        while open_list:
-            _, current_node = heapq.heappop(open_list)
-            closed_list.add(current_node.nombre)
+                    tentative_g = current_node.g + 1
+                    tentative_f = tentative_g + self.heuristicStar(neighbor, endNode)
 
-            if current_node == end_node:
-                path = []
-                while current_node:
-                    path.append(current_node.nombre)
-                    current_node = current_node.parent
-                return path[::-1]
+                    in_open_list = False
+                    for item in open_list:
+                        _, open_node = item
+                        if neighbor.nombre == open_node.nombre:
+                            in_open_list = True
+                            if tentative_g >= neighbor.g:
+                                break
+                    if not in_open_list or tentative_g < neighbor.g:
+                        neighbor.g = tentative_g
+                        neighbor.h = self.heuristicStar(neighbor, endNode)
+                        neighbor.f = tentative_f
+                        neighbor.parent = current_node
+                        if not in_open_list:
+                            heapq.heappush(open_list, (neighbor.nombre, neighbor))
+            # return None
+        return self.selctMinorRoute(routesFound)
 
-            for neighbor in current_node.conexiones:
-                if neighbor.nombre in closed_list:
-                    continue
+    # Method to calculate heuristic for a star algorithm
+    def heuristicStar(self, node, end):
+        return abs(node.calle - end.calle) + abs(node.carrera - end.carrera)
 
-                tentative_g = current_node.g + 1
-                tentative_f = tentative_g + self.__calculate_heuristic(
-                    neighbor, end_node
-                )
+    # Auxiliar method to obtain nodes with cabs into it
+    def searchCabs(self, nodeList: dict):
+        ubications = []
+        for v, k in nodeList.items():
+            if k.getCab() != None:
+                ubications.append(k)
+        return ubications
 
-                in_open_list = False
-                for item in open_list:
-                    _, open_node = item
-                    if neighbor.nombre == open_node.nombre:
-                        in_open_list = True
-                        if tentative_g >= neighbor.g:
-                            break
-                if not in_open_list or tentative_g < neighbor.g:
-                    neighbor.g = tentative_g
-                    neighbor.h = self.__calculate_heuristic(neighbor, end_node)
-                    neighbor.f = tentative_f
-                    neighbor.parent = current_node
-                    if not in_open_list:
-                        heapq.heappush(open_list, (neighbor.nombre, neighbor))
-
-        return None
+    # Method to get shortest route of a route list
+    def selctMinorRoute(self, routes: list):
+        minorRoute = 100000
+        selected = None
+        for route in routes:
+            if len(route) < minorRoute:
+                minorRoute = len(route)
+                selected = route
+        return selected
