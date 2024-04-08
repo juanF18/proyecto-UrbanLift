@@ -1,0 +1,572 @@
+{
+  "nodes": [
+    {
+      "nombre": "Nodo1",
+      "carrera": 30,
+      "calle": 29,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo47"]
+    },
+    {
+      "nombre": "Nodo2",
+      "carrera": 45,
+      "calle": 9,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo30", "Nodo15", "Nodo16", "Nodo22"]
+    },
+    {
+      "nombre": "Nodo3",
+      "carrera": 25,
+      "calle": 46,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo13", "Nodo44", "Nodo19", "Nodo27", "Nodo43"]
+    },
+    {
+      "nombre": "Nodo4",
+      "carrera": 46,
+      "calle": 11,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo8"]
+    },
+    {
+      "nombre": "Nodo5",
+      "carrera": 6,
+      "calle": 39,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo16", "Nodo31", "Nodo35", "Nodo34", "Nodo30"]
+    },
+    {
+      "nombre": "Nodo6",
+      "carrera": 12,
+      "calle": 47,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo17", "Nodo50", "Nodo39", "Nodo44"]
+    },
+    {
+      "nombre": "Nodo7",
+      "carrera": 40,
+      "calle": 22,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo23", "Nodo42", "Nodo40", "Nodo44", "Nodo22"]
+    },
+    {
+      "nombre": "Nodo8",
+      "carrera": 32,
+      "calle": 34,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo23", "Nodo5", "Nodo1", "Nodo14", "Nodo22"]
+    },
+    {
+      "nombre": "Nodo9",
+      "carrera": 41,
+      "calle": 6,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo39", "Nodo2", "Nodo28", "Nodo20", "Nodo21"]
+    },
+    {
+      "nombre": "Nodo10",
+      "carrera": 39,
+      "calle": 35,
+      "semaforo": {
+        "have": true,
+        "duration": 1.2
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo5", "Nodo33", "Nodo13", "Nodo15", "Nodo32"]
+    },
+    {
+      "nombre": "Nodo11",
+      "carrera": 17,
+      "calle": 37,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo44", "Nodo31", "Nodo50", "Nodo25"]
+    },
+    {
+      "nombre": "Nodo12",
+      "carrera": 32,
+      "calle": 27,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo26"]
+    },
+    {
+      "nombre": "Nodo13",
+      "carrera": 44,
+      "calle": 49,
+      "semaforo": {
+        "have": true,
+        "duration": 1.1
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo50", "Nodo9", "Nodo8", "Nodo45"]
+    },
+    {
+      "nombre": "Nodo14",
+      "carrera": 3,
+      "calle": 12,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo21", "Nodo8", "Nodo6", "Nodo7"]
+    },
+    {
+      "nombre": "Nodo15",
+      "carrera": 21,
+      "calle": 45,
+      "semaforo": {
+        "have": true,
+        "duration": 1.5
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo33", "Nodo32", "Nodo16", "Nodo10"]
+    },
+    {
+      "nombre": "Nodo16",
+      "carrera": 13,
+      "calle": 21,
+      "semaforo": {
+        "have": false,
+        "duration": 1.1
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo12", "Nodo44", "Nodo21"]
+    },
+    {
+      "nombre": "Nodo17",
+      "carrera": 15,
+      "calle": 24,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo14"]
+    },
+    {
+      "nombre": "Nodo18",
+      "carrera": 41,
+      "calle": 27,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo3"]
+    },
+    {
+      "nombre": "Nodo19",
+      "carrera": 2,
+      "calle": 1,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo47", "Nodo45", "Nodo8", "Nodo23", "Nodo6"]
+    },
+    {
+      "nombre": "Nodo20",
+      "carrera": 18,
+      "calle": 46,
+      "semaforo": {
+        "have": false,
+        "duration": 1.1
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo8", "Nodo37", "Nodo29", "Nodo31"]
+    },
+    {
+      "nombre": "Nodo21",
+      "carrera": 30,
+      "calle": 12,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo32"]
+    },
+    {
+      "nombre": "Nodo22",
+      "carrera": 16,
+      "calle": 32,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo25", "Nodo31", "Nodo40"]
+    },
+    {
+      "nombre": "Nodo23",
+      "carrera": 40,
+      "calle": 11,
+      "semaforo": {
+        "have": true,
+        "duration": 1.3
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo13", "Nodo10", "Nodo15"]
+    },
+    {
+      "nombre": "Nodo24",
+      "carrera": 5,
+      "calle": 2,
+      "semaforo": {
+        "have": false,
+        "duration": 1.3
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo14", "Nodo33", "Nodo30", "Nodo4", "Nodo7"]
+    },
+    {
+      "nombre": "Nodo25",
+      "carrera": 34,
+      "calle": 27,
+      "semaforo": {
+        "have": false,
+        "duration": 0.6
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo14", "Nodo8"]
+    },
+    {
+      "nombre": "Nodo26",
+      "carrera": 3,
+      "calle": 6,
+      "semaforo": {
+        "have": false,
+        "duration": 0.8
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo20", "Nodo35", "Nodo32", "Nodo7", "Nodo39"]
+    },
+    {
+      "nombre": "Nodo27",
+      "carrera": 1,
+      "calle": 37,
+      "semaforo": {
+        "have": false,
+        "duration": 0.5
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo32", "Nodo3", "Nodo41"]
+    },
+    {
+      "nombre": "Nodo28",
+      "carrera": 48,
+      "calle": 50,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo42"]
+    },
+    {
+      "nombre": "Nodo29",
+      "carrera": 44,
+      "calle": 3,
+      "semaforo": {
+        "have": true,
+        "duration": 1.3
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo49", "Nodo15", "Nodo14", "Nodo45", "Nodo33"]
+    },
+    {
+      "nombre": "Nodo30",
+      "carrera": 25,
+      "calle": 21,
+      "semaforo": {
+        "have": false,
+        "duration": 1.0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo44", "Nodo25"]
+    },
+    {
+      "nombre": "Nodo31",
+      "carrera": 22,
+      "calle": 19,
+      "semaforo": {
+        "have": true,
+        "duration": 1.3
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo35"]
+    },
+    {
+      "nombre": "Nodo32",
+      "carrera": 7,
+      "calle": 7,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo39", "Nodo48", "Nodo31", "Nodo1"]
+    },
+    {
+      "nombre": "Nodo33",
+      "carrera": 42,
+      "calle": 30,
+      "semaforo": {
+        "have": false,
+        "duration": 1.0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo17", "Nodo34"]
+    },
+    {
+      "nombre": "Nodo34",
+      "carrera": 48,
+      "calle": 19,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo48"]
+    },
+    {
+      "nombre": "Nodo35",
+      "carrera": 48,
+      "calle": 45,
+      "semaforo": {
+        "have": true,
+        "duration": 0.9
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo40", "Nodo34", "Nodo42"]
+    },
+    {
+      "nombre": "Nodo36",
+      "carrera": 36,
+      "calle": 20,
+      "semaforo": {
+        "have": false,
+        "duration": 0.7
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo39", "Nodo27", "Nodo32"]
+    },
+    {
+      "nombre": "Nodo37",
+      "carrera": 20,
+      "calle": 28,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo18", "Nodo45"]
+    },
+    {
+      "nombre": "Nodo38",
+      "carrera": 39,
+      "calle": 33,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo29"]
+    },
+    {
+      "nombre": "Nodo39",
+      "carrera": 24,
+      "calle": 13,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo48", "Nodo29", "Nodo3", "Nodo41", "Nodo43"]
+    },
+    {
+      "nombre": "Nodo40",
+      "carrera": 7,
+      "calle": 2,
+      "semaforo": {
+        "have": true,
+        "duration": 0.5
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo37", "Nodo28", "Nodo48", "Nodo19"]
+    },
+    {
+      "nombre": "Nodo41",
+      "carrera": 44,
+      "calle": 50,
+      "semaforo": {
+        "have": false,
+        "duration": 0.5
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo34", "Nodo8", "Nodo36", "Nodo16"]
+    },
+    {
+      "nombre": "Nodo42",
+      "carrera": 38,
+      "calle": 36,
+      "semaforo": {
+        "have": false,
+        "duration": 0.7
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo37"]
+    },
+    {
+      "nombre": "Nodo43",
+      "carrera": 40,
+      "calle": 45,
+      "semaforo": {
+        "have": false,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo17", "Nodo28"]
+    },
+    {
+      "nombre": "Nodo44",
+      "carrera": 49,
+      "calle": 8,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo50", "Nodo11", "Nodo15"]
+    },
+    {
+      "nombre": "Nodo45",
+      "carrera": 7,
+      "calle": 46,
+      "semaforo": {
+        "have": true,
+        "duration": 0.8
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo35"]
+    },
+    {
+      "nombre": "Nodo46",
+      "carrera": 1,
+      "calle": 8,
+      "semaforo": {
+        "have": false,
+        "duration": 0.6
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo45", "Nodo37", "Nodo12", "Nodo39", "Nodo6"]
+    },
+    {
+      "nombre": "Nodo47",
+      "carrera": 13,
+      "calle": 38,
+      "semaforo": {
+        "have": true,
+        "duration": 1.0
+      },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo43", "Nodo7"]
+    },
+    {
+      "nombre": "Nodo48",
+      "carrera": 17,
+      "calle": 44,
+      "semaforo": {
+        "have": true,
+        "duration": 0.7
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo41", "Nodo9", "Nodo16"]
+    },
+    {
+      "nombre": "Nodo49",
+      "carrera": 42,
+      "calle": 12,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo28"]
+    },
+    {
+      "nombre": "Nodo50",
+      "carrera": 1,
+      "calle": 14,
+      "semaforo": {
+        "have": true,
+        "duration": 0
+      },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo4", "Nodo33", "Nodo21", "Nodo46"]
+    }
+  ],
+  "taxis": [
+    {
+      "placa": "abc123",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc456",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc789",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc012",
+      "capacidad_tanque": 20
+    }
+  ]
+}

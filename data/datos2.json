@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "nombre": "Nodo1",
+      "carrera": 10,
+      "calle": 10,
+      "semaforo": { "have": true, "duration": 0.4 },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo2", "Nodo4"]
+    },
+    {
+      "nombre": "Nodo2",
+      "carrera": 10,
+      "calle": 20,
+      "semaforo": { "have": true, "duration": 1 },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo1", "Nodo3", "Nodo5"]
+    },
+    {
+      "nombre": "Nodo3",
+      "carrera": 10,
+      "calle": 30,
+      "semaforo": { "have": false },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo2", "Nodo6"]
+    },
+    {
+      "nombre": "Nodo4",
+      "carrera": 20,
+      "calle": 10,
+      "semaforo": { "have": true, "duration": 1.5 },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo1", "Nodo5", "Nodo7"]
+    },
+    {
+      "nombre": "Nodo5",
+      "carrera": 20,
+      "calle": 20,
+      "semaforo": { "have": false },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo2", "Nodo4", "Nodo6", "Nodo8"]
+    },
+    {
+      "nombre": "Nodo6",
+      "carrera": 20,
+      "calle": 30,
+      "semaforo": { "have": true, "duration": 0.9 },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo3", "Nodo5", "Nodo9"]
+    },
+    {
+      "nombre": "Nodo7",
+      "carrera": 30,
+      "calle": 10,
+      "semaforo": { "have": false },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo4", "Nodo8"]
+    },
+    {
+      "nombre": "Nodo8",
+      "carrera": 30,
+      "calle": 20,
+      "semaforo": { "have": true, "duration": 1.3 },
+      "punto_de_interes": false,
+      "conexiones": ["Nodo5", "Nodo7", "Nodo9"]
+    },
+    {
+      "nombre": "Nodo9",
+      "carrera": 30,
+      "calle": 30,
+      "semaforo": { "have": true, "duration": 1.6 },
+      "punto_de_interes": true,
+      "conexiones": ["Nodo6", "Nodo8"]
+    }
+  ],
+  "taxis": [
+    {
+      "placa": "abc123",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc456",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc789",
+      "capacidad_tanque": 20
+    },
+    {
+      "placa": "abc012",
+      "capacidad_tanque": 20
+    }
+  ]
+}
