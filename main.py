@@ -58,12 +58,15 @@ def main():
     path, total_fuel = routes.astar_with_gas(nodes, "Nodo1", "Nodo5", 15)
     print("Path: ", path)
     print("Total fuel expense was: ", total_fuel)
-
-    # Route hill climbing
-
+    print("-" * 50)
+    print("Route with Hill climb")
     iteraciones_max = 50
     pathHill = routes_bfs.hillClimbing(nodes, inicio, fin, iteraciones_max)
-    print(pathHill)
+    print("Path: ", pathHill)
+    print("-" * 50)
+    print("Tour trip")
+    path_tour_trip = routes.path_tour_trip_best_first_search("Nodo3", nodes)
+    print(path_tour_trip)
 
 
 if __name__ == "__main__":
