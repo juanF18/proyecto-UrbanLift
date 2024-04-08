@@ -45,9 +45,15 @@ def main():
     print("Start Node: ", start)
     print("End Node: ", end)
     path = routes.astar_shortest_route(nodes, "Nodo1", "Nodo5")
+    total_distance, fuel_consumption, total_time, total_cost = (
+        Cab.generate_travel_report(path, nodes)
+    )
     print("Path: ", path)
+    print(
+        f"Total distance: {total_distance}\n Fuel consuption: {fuel_consumption} \n Total time: {total_time} \n Total cost: {total_cost}"
+    )
     print("-" * 50)
-
+    # --------------------------------------------------------------------
     print("Best firs search")
     inicio = "Nodo1"
     fin = "Nodo6"
@@ -60,21 +66,48 @@ def main():
 
     camino.reverse()
     print("Path: ", camino)
+    total_distance, fuel_consumption, total_time, total_cost = (
+        Cab.generate_travel_report(camino, nodes)
+    )
+    print(
+        f"Total distance: {total_distance}\n Fuel consuption: {fuel_consumption} \n Total time: {total_time} \n Total cost: {total_cost}"
+    )
+    # ----------------------------------------
     print("-" * 50)
     print("Route a* with lower fuel consumption")
     Node.resetting_euristics_values(nodes)
     path, total_fuel = routes.astar_with_gas(nodes, "Nodo1", "Nodo5", 15)
     print("Path: ", path)
     print("Total fuel expense was: ", total_fuel)
+    total_distance, fuel_consumption, total_time, total_cost = (
+        Cab.generate_travel_report(path, nodes)
+    )
+    print(
+        f"Total distance: {total_distance}\n Fuel consuption: {fuel_consumption} \n Total time: {total_time} \n Total cost: {total_cost}"
+    )
+    # ---------------------------------------------
     print("-" * 50)
     print("Route with Hill climb")
     iteraciones_max = 50
     pathHill = routes_bfs.hillClimbing(nodes, inicio, fin, iteraciones_max)
     print("Path: ", pathHill)
+    total_distance, fuel_consumption, total_time, total_cost = (
+        Cab.generate_travel_report(pathHill, nodes)
+    )
+    print(
+        f"Total distance: {total_distance}\n Fuel consuption: {fuel_consumption} \n Total time: {total_time} \n Total cost: {total_cost}"
+    )
+    # ----------------------------------------------------
     print("-" * 50)
     print("Tour trip")
     path_tour_trip = routes.path_tour_trip_best_first_search("Nodo3", nodes)
     print(path_tour_trip)
+    total_distance, fuel_consumption, total_time, total_cost = (
+        Cab.generate_travel_report(path_tour_trip, nodes)
+    )
+    print(
+        f"Total distance: {total_distance}\n Fuel consuption: {fuel_consumption} \n Total time: {total_time} \n Total cost: {total_cost}"
+    )
     print("-" * 50)
     print("Selected route from user to taxi")
     path = routes_bfs.astarShortestRoute(nodes, inicio)
