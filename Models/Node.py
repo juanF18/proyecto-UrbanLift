@@ -1,3 +1,6 @@
+from Models.Cab import Cab
+
+
 class Node:
     def __init__(
         self,
@@ -7,6 +10,7 @@ class Node:
         semaforo: dict,
         puntoInteres: bool,
         conexiones: list,
+        cab: Cab,
     ):
         self.nombre = nombre
         self.carrera = carrera
@@ -18,6 +22,7 @@ class Node:
         self.h = 0
         self.f = 0
         self.parent = None
+        self.cab = cab
 
     def __eq__(self, other):
         """
@@ -73,6 +78,7 @@ class Node:
                 nodo_data["semaforo"],
                 nodo_data["punto_de_interes"],
                 [],
+                None,
             )
             nodes[nodo.nombre] = nodo
             # Agregamos el nombre del nodo al mapeo
@@ -119,3 +125,12 @@ class Node:
     def set_punto_interes(self, nuevoEstado: bool):
         if nuevoEstado is not None:
             self.puntoInteres = nuevoEstado
+
+    # Method to get cab into node
+    def getCab(self):
+        return self.cab
+
+    # Method to set cab into node
+    def setCab(self, aCab: Cab):
+        if aCab != None:
+            self.cab = aCab
