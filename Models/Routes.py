@@ -3,12 +3,10 @@ import heapq
 
 
 class Routes:
-    __TWITHTRAFFICTLIGHT = 12
     __TWITHOUTRAFFICLIGHT = 10
     __DISTANCE = 2
     __FUELCONSUPTION = 1
     __COSTNODE = 3000
-    __MOVEMENTS = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
     """ 
         method to browse on node list and get back route from origin

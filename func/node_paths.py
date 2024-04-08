@@ -6,8 +6,36 @@ class Node_paths:
     def __init__(self) -> None:
         pass
 
+    """
+    Calculates the heuristic estimate of the cost to reach the end node from the given node. 
+    This heuristic is used in pathfinding algorithms to estimate distances between nodes on a grid.
+
+    Parameters:
+
+        node: The current node from which the heuristic cost to the end node is being calculated.
+        end: The end node for which the heuristic cost is being calculated from the current node.
+
+    Returns:
+
+        int: The estimated cost from the current node to the end node.
+    """
+
     def __calculate_heuristic(self, node, end):
         return abs(node.calle - end.calle) + abs(node.carrera - end.carrera)
+
+    """
+    Calculates the cost of traveling from a node to its neighbor, considering the efficiency of 
+    the vehicle being used.
+    Parameters:
+
+        node: The current node from which the neighbor's cost is being calculated.
+        neighbor: The neighboring node to which the cost is calculated.
+        vehicle_efficiency: A measure of the vehicle's efficiency, used to calculate the cost.
+
+    Returns:
+
+        float: The calculated cost to travel from node to neighbor.
+    """
 
     def __calculate_cost(self, node, neighbor, vehicle_efficiency):
         distance = abs(node.calle - neighbor.calle) + abs(
@@ -15,6 +43,20 @@ class Node_paths:
         )
 
         return distance / vehicle_efficiency
+
+    """
+        Finds the shortest route between two nodes using the A* search algorithm.
+    Parameters:
+
+        nodes_dict: A dictionary of node objects accessible by their names.
+        start_name: The name of the start node.
+        end_name: The name of the end node.
+
+    Returns:
+
+        list: A list of node names representing the shortest path from the start node
+        to the end node. If no path exists, returns None.
+    """
 
     def astar_shortest_route(self, nodes_dict, start_name, end_name):
         open_list = []
@@ -61,6 +103,23 @@ class Node_paths:
                         heapq.heappush(open_list, (neighbor.nombre, neighbor))
 
         return None
+
+    """
+    Finds the shortest route between two nodes using the A* search algorithm, considering 
+    the vehicle's fuel efficiency.
+    Parameters:
+
+        nodes_dict: A dictionary of node objects accessible by their names.
+        start_name: The name of the start node.
+        end_name: The name of the end node.
+        vehicle_efficiency: The efficiency of the vehicle being used, which affects the 
+        cost of travel between nodes.
+
+    Returns:
+
+        tuple: A tuple containing a list of node names representing the shortest path from 
+        the start node to the end node and the total fuel consumption for this path. If no path exists, returns None.
+    """
 
     def astar_with_gas(self, nodes_dict, start_name, end_name, vehicle_efficiency):
         open_list = []
@@ -116,6 +175,20 @@ class Node_paths:
 
         return None
 
+    """
+    This function performs a breadth-first search (BFS) to find the shortest path 
+    between a start node and a target node in a graph. It returns the sequence of nodes that form this path.
+    Parameters:
+
+        start_node (str): The starting node for the BFS.
+        target_node (str): The node to find the path to, from the start_node.
+
+    Returns:
+
+        list of Node: A list of nodes representing the shortest path from start_node 
+        to target_node. Returns None if no path exists.
+    """
+
     def bfs_find_path(self, start_node, target_node):
         visited = set()
         queue = deque()
@@ -134,6 +207,23 @@ class Node_paths:
                     queue.append((connection, new_path))
 
         return None
+
+    """
+    This function designs a tour, starting from a given node, that aims to visit all
+    points of interest in a graph using a modified best-first search strategy. It 
+    returns the names of the nodes in the order they are visited.
+    Parameters:
+
+        start_node_name (str): The name of the starting node for the tour.
+        nodos (dict): A dictionary of nodes accessible by their names. Each node is 
+        expected to have attributes like nombre (name), puntoInteres (whether it's a 
+        point of interest), and connections to other nodes.
+
+    Returns:
+
+        list of str: A list of node names representing the tour path that visits all 
+        points of interest and returns to the start node, if possible.
+    """
 
     def path_tour_trip_best_first_search(self, start_node_name, nodos):
         start_node = nodos[start_node_name]
