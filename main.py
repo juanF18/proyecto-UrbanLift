@@ -75,6 +75,10 @@ def main():
     print("Tour trip")
     path_tour_trip = routes.path_tour_trip_best_first_search("Nodo3", nodes)
     print(path_tour_trip)
+    print("-" * 50)
+    print("Selected route from user to taxi")
+    path = routes_bfs.astarShortestRoute(nodes, inicio)
+    print(path)
 
 
 """ 
