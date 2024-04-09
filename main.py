@@ -40,14 +40,16 @@ def main():
     cab = nodes[path_taxi[0]].getCab().get_plate()
     print("Placa taxi: ", cab)
     print(f"El origin escogido fue {origen} y el destino fue {destino}")
-    print("""
+    print(
+        """
     Seleccione el tipo de ruta deseada:
     [1] Ruta más corta
     [2] Ruta más rápida
     [3] Ruta con menor consumo de combustible
     [4] Ruta más económica para el pasajero
     [5] Tour Trip
-    """)
+    """
+    )
     opcion = int(input("Ingrese el número de la opción deseada: "))
 
     if opcion == 1:
@@ -118,15 +120,6 @@ def main():
         )
     else:
         print("Opción no válida.")
-
-
-""" 
-    Method to asign random cabs into nodes
-    Args:
-        cabList:list
-        nodeKeys:list
-        nodeList:dict
-"""
 
 
 def print_matrix(matriz):
@@ -244,6 +237,15 @@ def seleccionar_nodo(nodos, mensaje):
             print("Por favor, ingrese un número.")
 
     return nodos[seleccion]
+
+
+""" 
+    Method to asign random cabs into nodes
+    Args:
+        cabList:list
+        nodeKeys:list
+        nodeList:dict
+"""
 
 
 def assignCabs(cabList: list, nodeKeys: list, nodeList: dict):
